@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1 class="page-title">Danh sách lịch hẹn</h1>
+
+<a href="/add" class="btn">+ Tạo lịch mới</a>
+<br><br>
+
+<table>
+    <tr>
+        <th>Tiêu đề</th>
+        <th>Email</th>
+        <th>Thời gian nhắc</th>
+        <th>Trạng thái</th>
+    </tr>
+
+    {% for s in schedules %}
+    <tr>
+        <td>{{ s.title }}</td>
+        <td>{{ s.email }}</td>
+        <td>{{ s.remind_at }}</td>
+        <td>
+            {% if s.is_sent %}
+                ✅ Đã gửi
+            {% else %}
+                🔔 Chưa gửi
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

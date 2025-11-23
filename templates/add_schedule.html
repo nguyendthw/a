@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1 class="page-title">Tạo lịch hẹn mới</h1>
+
+<div class="card">
+    <form method="POST">
+
+        <label>Email:</label><br>
+        <input type="email" name="email" required style="width:100%; padding:12px; margin:10px 0; border-radius:10px;"><br>
+
+        <label>Tiêu đề:</label><br>
+        <input type="text" name="title" required style="width:100%; padding:12px; margin:10px 0; border-radius:10px;"><br>
+
+        <label>Mô tả:</label><br>
+        <textarea name="description" style="width:100%; padding:12px; margin:10px 0; height:120px; border-radius:10px;"></textarea><br>
+
+        <label>Thời gian nhắc:</label><br>
+        <input type="datetime-local" name="remind_at" required style="width:100%; padding:12px; margin:10px 0; border-radius:10px;"><br>
+
+        <button class="btn">Tạo lịch</button>
+
+    </form>
+</div>
+
+{% endblock %}

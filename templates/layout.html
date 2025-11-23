@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+
+        :root {
+            --primary: #6C63FF;
+            --bg: #f5f7ff;
+            --text: #1a1a1a;
+            --card-bg: #ffffff;
+            --radius: 16px;
+            --shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background: var(--bg);
+            display: flex;
+        }
+
+        .sidebar {
+            width: 260px;
+            background: #fff;
+            height: 100vh;
+            box-shadow: var(--shadow);
+            padding: 30px 20px;
+            position: fixed;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: var(--primary);
+        }
+
+        .menu a {
+            display: block;
+            padding: 14px 18px;
+            border-radius: var(--radius);
+            margin-bottom: 12px;
+            font-size: 15px;
+            text-decoration: none;
+            color: var(--text);
+            transition: 0.25s;
+        }
+
+        .menu a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateX(6px);
+        }
+
+        .content {
+            margin-left: 280px;
+            padding: 40px;
+            width: 100%;
+        }
+
+        .page-title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-family: "Poppins";
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 12px 22px;
+            background: var(--primary);
+            color: white;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.25s;
+        }
+
+        .btn:hover {
+            background: #5548e0;
+            transform: translateY(-2px);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: var(--shadow);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 18px;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: #fafaff;
+            text-align: left;
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="logo">📅 MySchedule</div>
+
+        <div class="menu">
+            <a href="/">Dashboard</a>
+            <a href="/add">Tạo lịch</a>
+            <a href="/list">Danh sách lịch</a>
+            <a href="/settings">Cài đặt</a>
+        </div>
+    </div>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>
